@@ -4,6 +4,7 @@
     {
         Human,
         Ork,
-        Elf
+        Elf,
+        Vampire
     }
 }

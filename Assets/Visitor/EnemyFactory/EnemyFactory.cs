@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Visitor
 {
-    public class EnemyFactory: ScriptableObject
+    public class EnemyFactory: MonoBehaviour
     {
         [SerializeField] private Human _humanPrefab;
         [SerializeField] private Ork _orkPrefab;
@@ -15,16 +15,20 @@ namespace Assets.Visitor
             switch (type)
             {
                 case EnemyType.Elf:
-                    return Instantiate(_elfPrefab);
+                    Enemy elf = _elfPrefab;
+                    return elf;
 
                 case EnemyType.Human:
-                    return Instantiate(_humanPrefab);
+                    Enemy human = _humanPrefab;
+                    return human;
 
                 case EnemyType.Ork:
-                    return Instantiate(_orkPrefab);
+                    Enemy ork = _orkPrefab;
+                    return ork;
 
                 case EnemyType.Vampire:
-                    return Instantiate(_vampirePrefab);
+                    Enemy vamprie = _vampirePrefab;
+                    return vamprie;
 
                 default:
                     throw new ArgumentException(nameof(type));

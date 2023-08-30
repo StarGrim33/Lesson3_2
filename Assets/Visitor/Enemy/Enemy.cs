@@ -3,8 +3,10 @@ using UnityEngine;
 
 namespace Assets.Visitor
 {
-    public abstract class Enemy: MonoBehaviour
+    public abstract class Enemy: MonoBehaviour, IWeighted
     {
+        public abstract float Weight { get; }
+
         public event Action<Enemy> Died;
 
         //Какая то общая логика врага: передвижение, жизни и тп.
